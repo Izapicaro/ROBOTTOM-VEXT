@@ -9,14 +9,14 @@ struct Robot {
 };
 
 //movement
-void go(Robot robot, int lPower, int rPower){
-	motor[robot.left] = lPower;
-	motor[robot.right] = -rPower;
+void go(Robot robot, int lPower, int rPower, int direction){
+	motor[robot.left] = direction*lPower;
+	motor[robot.right] = direction*rPower;
 }
 
 //stopping
-void halt(Robot robot){
-	go(robot,0,0);
+void halt(Robot robot,int direction){
+	go(robot,0,0,direction);
 }
 
 //lift
