@@ -2,6 +2,8 @@
 #include "testlibrary.c"
 
 task main(){
+	
+	int x = 1;
 
 	Robot ROBOT;
 
@@ -12,15 +14,19 @@ task main(){
 	ROBOT.lift2 = port4;
 
 	while(true){
-
+	
+		if(vexRT[Btn8R]==1){
+			x = x*-1;
+		}
+	
 		//move
 		if(abs(vexRT[Ch1])>20 || abs(vexRT[Ch3])>20){
-			go(ROBOT,vexRT[Ch3],vexRT[Ch1]);
+			go(ROBOT,vexRT[Ch3],vexRT[Ch1],x);
 		}
 
 		//stop
 		else{
-			halt(ROBOT);
+			halt(ROBOT,x);
 		}
 
 		//lift up
