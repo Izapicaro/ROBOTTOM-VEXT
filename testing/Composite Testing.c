@@ -1,4 +1,4 @@
-// Custom library (contents in separate file)
+// Custom library (contents such as functions in a separate file)
 #include "testlibrary.c"
 
 // Main section of code
