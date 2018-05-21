@@ -25,7 +25,7 @@ task main(){
 		Two equal signs mean that it checks the current value of vexRT[Btn8R], rather than assigning a value to it */
 		if(vexRT[Btn8R]==1){
 			
-			// If the allowChange variable has a value of 1, then reverse the controls
+			// Run code within statement if the allowChange variable has a value of 1
 			if(allowChange==1){
 
 				/* Multiply the current value of x by -1 to get its new value (so it'll either change from 1 to -1, or -1 to 1)
