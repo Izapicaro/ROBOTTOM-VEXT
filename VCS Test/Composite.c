@@ -1,7 +1,12 @@
 #include "robot-config.h"
           
 int main() {
-   
+    
+    // Print to screen that program has started
+    Brain.Screen.print("TELL CONTROL FREAKS");
+    Brain.Screen.newLine();
+    Brain.Screen.print("ROBOTTOM VEXT");
+
     int x = 1;
     int allowChange = 1;
     int reapState = 0;
@@ -10,6 +15,10 @@ int main() {
         
         // If button A is pressed
         if(Controller.ButtonA.pressing()){
+            
+            // For the bants
+            Controller.rumble(".-.-.-.-");
+            
             // If controls can be reversed
             if(allowChange==1){
                 // Reverse controls
