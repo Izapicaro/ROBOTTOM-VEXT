@@ -143,19 +143,19 @@ int main() {
         // Rotate claw to 0
         if(ControllerX.ButtonX.pressing()){
             setClaw(0);
-            clawLevel = Claw1.rotation(rotationUnits::deg);
+            clawLevel = 0;
         }
         
         // Rotate claw to 90
         else if(ControllerX.ButtonA.pressing()){
             setClaw(90);
-            clawLevel = Claw1.rotation(rotationUnits::deg);
+            clawLevel = 90;
         }
         
         //Rotate claw to 180
         else if(ControllerX.ButtonB.pressing()){
             setClaw(180);
-            clawLevel = Claw1.rotation(rotationUnits::deg);
+            clawLevel = 180;
         }
         
         // Claw up
