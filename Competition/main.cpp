@@ -9,8 +9,7 @@
 vex::competition    Competition;
 
 //Variables
-
-int x = 1;
+int controlStatus = 1;
 int allowChange = 1;
 double clawLevel = 0;
 double liftLevel = 0;
@@ -43,10 +42,6 @@ void pre_auton( void ) {
 /*---------------------------------------------------------------------------*/
 
 void autonomous( void ) {
-  // ..........................................................................
-  // Insert autonomous user code here.
-  // ..........................................................................
-  
   while(true){
       wheel(1);
       Intaker.rotateFor(5,vex::timeUnits::sec, 0, vex::velocityUnits::pct);
@@ -70,10 +65,8 @@ void usercontrol( void ) {
     while(true){
 
         Brain.Screen.clearScreen();
-
         // display the encoder value on the screen
         Brain.Screen.printAt(1, 20, "Left: %f degrees", Left1.rotation(rotationUnits::deg));
-
         // display the encoder velocity on the screen
         Brain.Screen.printAt(1, 40, "Right: %f degrees", Right1.rotation(rotationUnits::deg));
         
@@ -86,14 +79,13 @@ void usercontrol( void ) {
             // If controls can be reversed
             if(allowChange==1){
                 // Reverse controls
-                x=x*-1;
+                controlStatus=controlStatus*-1;
                
                 // Controls can no longer be reversed
                 allowChange = 0;
             }
         }
         
-        // If button A is not pressed
         else{
             // Controls can now be reversed
             allowChange = 1;
@@ -174,26 +166,18 @@ void usercontrol( void ) {
             Lift1.rotateTo(liftLevel, vex::rotationUnits::deg, 10, vex::velocityUnits::pct);
         }
         
-        // Something about not wasting resources
         vex::task::sleep(20);
     }
 }
 
-//
-// Main will set up the competition functions and callbacks.
-//
 int main() {
     
-    //Run the pre-autonomous function. 
     pre_auton();
-    
-    //Set up callbacks for autonomous and driver control periods.
     Competition.autonomous( autonomous );
     Competition.drivercontrol( usercontrol );
 
-    //Prevent main from exiting with an infinite loop.                        
     while(1) {
-      vex::task::sleep(100);//Sleep the task for a short amount of time to prevent wasted resources.
+      vex::task::sleep(100);
     }    
        
 }
