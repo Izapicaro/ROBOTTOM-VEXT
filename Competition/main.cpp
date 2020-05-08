@@ -27,10 +27,9 @@ double liftLevel = 0;
 /*---------------------------------------------------------------------------*/
 
 void pre_auton( void ) {
-    // Print to screen that program has started
-    //Brain.Screen.print("TELL CONTROL FREAKS");
-    //Brain.Screen.newLine();
-    //Brain.Screen.print("ROBOTTOM VEXT");
+    Brain.Screen.print("TELL CONTROL FREAKS");
+    Brain.Screen.newLine();
+    Brain.Screen.print("ROBOTTOM VEXT");
 }
 
 /*---------------------------------------------------------------------------*/
