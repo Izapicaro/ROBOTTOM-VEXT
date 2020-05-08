@@ -53,13 +53,6 @@ void autonomous( void ) {
       Intaker.rotateFor(5,vex::timeUnits::sec, 0, vex::velocityUnits::pct);
       Intaker.rotateFor(10,vex::timeUnits::sec, 100, vex::velocityUnits::pct);
   }
- 
-  //if(Fw.velocity(velocityUnits::pct)>=70){
-      //Intaker.rotateFor(15, vex::timeUnits::sec, 100, vex::velocityUnits::pct);
-  //}
-  //Left1.rotateFor(5, vex::timeUnits::sec, 100, vex::velocityUnits::pct);
-  //Right1.rotateFor(5, vex::timeUnits::sec, 100, vex::velocityUnits::pct);
-  //go(0);
 
 }
 
