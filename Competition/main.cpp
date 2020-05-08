@@ -123,7 +123,7 @@ void usercontrol( void ) {
         
         // Move robot
         if(abs(Controller.Axis3.value())>20 || abs(Controller.Axis2.value())>20){
-            go(x);
+            go(controlStatus);
         }
        
         // Stop robot
