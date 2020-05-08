@@ -1,2 +1,3 @@
 # ROBOTTOM-VEXT
-Vex memes for robotics teams of edgy teens
+VEX memes for robotics teams of edgy teens
+For use with VEX C++
